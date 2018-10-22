@@ -11,10 +11,11 @@
 		D60588A3217CEC8100C397C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588A2217CEC8100C397C8 /* AppDelegate.swift */; };
 		D60588A5217CEC8100C397C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588A4217CEC8100C397C8 /* ViewController.swift */; };
 		D60588A8217CEC8100C397C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60588A6217CEC8100C397C8 /* Main.storyboard */; };
-		D60588AA217CEC8200C397C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60588A9217CEC8200C397C8 /* Assets.xcassets */; };
 		D60588AD217CEC8200C397C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60588AB217CEC8200C397C8 /* LaunchScreen.storyboard */; };
 		D60588B8217CEC8300C397C8 /* DSCWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588B7217CEC8300C397C8 /* DSCWeatherAppTests.swift */; };
 		D60588C3217CEC8300C397C8 /* DSCWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588C2217CEC8300C397C8 /* DSCWeatherAppUITests.swift */; };
+		D60588D1217DBAAA00C397C8 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588D0217DBAAA00C397C8 /* WeatherModel.swift */; };
+		D60588D3217DBE1A00C397C8 /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60588D2217DBE1A00C397C8 /* Assests.xcassets */; };
 		EC5F34F6FFF0577209898C01 /* Pods_DSCWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E8F0BE2E6E5AE6E31B66ED /* Pods_DSCWeatherAppTests.framework */; };
 		F07B6F395D252AE36F002B75 /* Pods_DSCWeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8D22AA66F15C8B014B322E /* Pods_DSCWeatherAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,7 +51,6 @@
 		D60588A2217CEC8100C397C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D60588A4217CEC8100C397C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D60588A7217CEC8100C397C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D60588A9217CEC8200C397C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D60588AC217CEC8200C397C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D60588AE217CEC8200C397C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60588B3217CEC8300C397C8 /* DSCWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSCWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +59,8 @@
 		D60588BE217CEC8300C397C8 /* DSCWeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSCWeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60588C2217CEC8300C397C8 /* DSCWeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSCWeatherAppUITests.swift; sourceTree = "<group>"; };
 		D60588C4217CEC8300C397C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D60588D0217DBAAA00C397C8 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		D60588D2217DBE1A00C397C8 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +128,9 @@
 			children = (
 				D60588A2217CEC8100C397C8 /* AppDelegate.swift */,
 				D60588A4217CEC8100C397C8 /* ViewController.swift */,
+				D60588D0217DBAAA00C397C8 /* WeatherModel.swift */,
 				D60588A6217CEC8100C397C8 /* Main.storyboard */,
-				D60588A9217CEC8200C397C8 /* Assets.xcassets */,
+				D60588D2217DBE1A00C397C8 /* Assests.xcassets */,
 				D60588AB217CEC8200C397C8 /* LaunchScreen.storyboard */,
 				D60588AE217CEC8200C397C8 /* Info.plist */,
 			);
@@ -274,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60588AD217CEC8200C397C8 /* LaunchScreen.storyboard in Resources */,
-				D60588AA217CEC8200C397C8 /* Assets.xcassets in Resources */,
+				D60588D3217DBE1A00C397C8 /* Assests.xcassets in Resources */,
 				D60588A8217CEC8100C397C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60588A5217CEC8100C397C8 /* ViewController.swift in Sources */,
+				D60588D1217DBAAA00C397C8 /* WeatherModel.swift in Sources */,
 				D60588A3217CEC8100C397C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,7 +561,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -573,7 +580,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -590,7 +600,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -608,7 +622,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -625,7 +643,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -642,7 +664,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Z34Y633MA;
 				INFOPLIST_FILE = DSCWeatherAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tsarsha.apps.DSCWeatherAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
