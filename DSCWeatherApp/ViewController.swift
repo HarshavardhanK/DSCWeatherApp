@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-
 import SwiftyJSON
 import Alamofire
 
@@ -35,7 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingHeading()
+        locationManager.startUpdatingLocation()
     }
     
     ///******************************* MARK: - AlamoFire NETWORKING *******************************///
@@ -53,46 +52,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 let weatherJSON: JSON = JSON(response.result.value!)
                 //print(weatherJSON)
+                print(weatherJSON)
                 
                 self.updateWeatherData(data: weatherJSON)
                 
             } else {
                 print("Error \(response.result.error)")
-                //self.cityLabel.text = "Connection Issues"
+                self.cityLabel.text = "Connection Issues"
             }
         }
     }
     
     ///******************************* MARK: - Parse JSON  *****************************************///
     ///
-    ///
-    
-    ///******************************* MARK: - Location Manager Delegate Methods ********************///
-    ///
-    ///
-    
-    ///******************************* MARK: - UI Update *******************************************///
-    ///
-    
-    func updateInterfaceWithWeatherData() {
-        
-        cityLabel.text = weather.city
-        tempLabel.text = "\(weather.temperature)"
-        weatherIconLabel.image = UIImage(named: weather.weatherIcon)
-        
-    }
-
-    
-    
-    
-    
     
     func updateWeatherData(data: JSON) {
         
         if let temperature = data["main"]["temp"].double {
             
             weather.temperature = Int(temperature - 273.15)
-            weather.city = data["main"]["city"].stringValue
+            weather.city = data["name"].stringValue
             weather.condition = data["weather"][0]["id"].intValue
             
             let iconName = weather.updateWeatherIcon(condition: weather.condition)
@@ -106,6 +85,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    ///******************************* MARK: - Location Manager Delegate Methods ********************///
+    ///
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // TODO: Serve the coordinates
+        // last value will be the most accurate
+        let location = locations[locations.count - 1]
+        
+        if location.horizontalAccuracy > 0 {
+            
+            self.locationManager.delegate = nil
+            
+            locationManager.stopUpdatingLocation()
+            print("Longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+            
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            
+            let param: [String: String] = ["lat": String(latitude), "lon": String(longitude), "appid":APIKEY]
+            
+            getWeatherData(url: url, parameters: param)
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        // Airplane mode, or blocked, or whatever
+        print(error)
+        cityLabel.text = "Location Unavailable"
+    }
+    
+    ///******************************* MARK: - UI Update *******************************************///
+    ///
+    
+    func updateInterfaceWithWeatherData() {
+        
+        cityLabel.text = weather.city
+        tempLabel.text = "\(weather.temperature)"
+        weatherIconLabel.image = UIImage(named: weather.weatherIcon)
+        
+        print("City is \(weather.city)")
+        
+    }
     
 
 }
