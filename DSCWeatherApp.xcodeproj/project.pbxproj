@@ -16,6 +16,9 @@
 		D60588C3217CEC8300C397C8 /* DSCWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588C2217CEC8300C397C8 /* DSCWeatherAppUITests.swift */; };
 		D60588D1217DBAAA00C397C8 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60588D0217DBAAA00C397C8 /* WeatherModel.swift */; };
 		D60588D3217DBE1A00C397C8 /* Assests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D60588D2217DBE1A00C397C8 /* Assests.xcassets */; };
+		D6FDB0CE218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDB0CD218026EB003CEDB7 /* ChangeCityViewController.swift */; };
+		D6FDB0CF218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDB0CD218026EB003CEDB7 /* ChangeCityViewController.swift */; };
+		D6FDB0D0218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FDB0CD218026EB003CEDB7 /* ChangeCityViewController.swift */; };
 		EC5F34F6FFF0577209898C01 /* Pods_DSCWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E8F0BE2E6E5AE6E31B66ED /* Pods_DSCWeatherAppTests.framework */; };
 		F07B6F395D252AE36F002B75 /* Pods_DSCWeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8D22AA66F15C8B014B322E /* Pods_DSCWeatherAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,7 @@
 		D60588C4217CEC8300C397C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D60588D0217DBAAA00C397C8 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		D60588D2217DBE1A00C397C8 /* Assests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assests.xcassets; sourceTree = "<group>"; };
+		D6FDB0CD218026EB003CEDB7 /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			children = (
 				D60588A2217CEC8100C397C8 /* AppDelegate.swift */,
 				D60588A4217CEC8100C397C8 /* ViewController.swift */,
+				D6FDB0CD218026EB003CEDB7 /* ChangeCityViewController.swift */,
 				D60588D0217DBAAA00C397C8 /* WeatherModel.swift */,
 				D60588A6217CEC8100C397C8 /* Main.storyboard */,
 				D60588D2217DBE1A00C397C8 /* Assests.xcassets */,
@@ -383,6 +388,7 @@
 				D60588A5217CEC8100C397C8 /* ViewController.swift in Sources */,
 				D60588D1217DBAAA00C397C8 /* WeatherModel.swift in Sources */,
 				D60588A3217CEC8100C397C8 /* AppDelegate.swift in Sources */,
+				D6FDB0CE218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60588B8217CEC8300C397C8 /* DSCWeatherAppTests.swift in Sources */,
+				D6FDB0CF218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D60588C3217CEC8300C397C8 /* DSCWeatherAppUITests.swift in Sources */,
+				D6FDB0D0218026EB003CEDB7 /* ChangeCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

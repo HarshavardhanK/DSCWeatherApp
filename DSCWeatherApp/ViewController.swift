@@ -27,6 +27,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
+    
+    var city: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        
+        if !city.isEmpty {
+            getWeatherDataByCityName(urlCity: url, city: city)
+        } else {
+            locationManager.startUpdatingLocation()
+        }
+        
     }
     
     ///******************************* MARK: - AlamoFire NETWORKING *******************************///
@@ -57,6 +65,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.updateWeatherData(data: weatherJSON)
                 
             } else {
+                print("Error \(response.result.error)")
+                self.cityLabel.text = "Connection Issues"
+            }
+        }
+    }
+    
+    // MARK: - GET WEATHER BY CITY NAME
+    func getWeatherDataByCityName(urlCity: String, city: String) {
+        
+        let urlCity = url + "?q=" + city + "&appid=" + APIKEY
+        print(urlCity)
+        
+        Alamofire.request(urlCity, method: .get).responseJSON {
+            response in
+            
+            if response.result.isSuccess {
+                print("Successfully fetched city weather data")
+                
+                let weatherJSON: JSON = JSON(response.result.value!)
+                print(weatherJSON)
+                
+                self.updateWeatherData(data: weatherJSON)
+                
+            } else {
+                
                 print("Error \(response.result.error)")
                 self.cityLabel.text = "Connection Issues"
             }
@@ -129,6 +162,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("City is \(weather.city)")
         
     }
+    
+    ///******************************* MARK: - Segues  *******************************************///
+    ///
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCityName" {
+            print("Segueing to ChangeCityViewController")
+        }
+    }
+    
+    @IBAction func unwindToViewController(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.source as? ChangeCityViewController {
+            
+            self.city = sourceViewController.changeCityTextField.text!
+            print("Unwind segue performed successfully..")
+            print("From ViewController City is \(city)")
+            
+            getWeatherDataByCityName(urlCity: url, city: city)
+        }
+    }
+    
     
 
 }
