@@ -14,6 +14,7 @@ class ChangeCityViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var changeCityTextField: UITextField!
     
+    @IBOutlet weak var getWeatherButton: UIButton!
     
     
     override func viewDidLoad() {

@@ -128,7 +128,7 @@
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="getWeatherPressed:" destination="P1Y-dL-zMM" eventType="touchUpInside" id="Hz1-Nq-7O5"/>
+                                            <segue destination="IpQ-Hu-DrF" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="WPx-ZE-YUU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvW-e3-7QL" userLabel="Back Button">
@@ -178,6 +178,7 @@
                     <navigationItem key="navigationItem" id="SGE-7i-E75"/>
                     <connections>
                         <outlet property="changeCityTextField" destination="0F0-ob-gbM" id="FYM-SU-2yI"/>
+                        <outlet property="getWeatherButton" destination="PdY-a2-R5m" id="ULl-jc-PXo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wa8-oH-wtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
